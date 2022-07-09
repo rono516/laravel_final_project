@@ -18,7 +18,7 @@
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="frontendassets/images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="frontendassets/images/apple-touch-icon.png">
+{{--    <link rel="apple-touch-icon" href="frontendassets/images/apple-touch-icon.png">--}}
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">

@@ -18,11 +18,13 @@ class FrontendController extends Controller
     }
 
     public function view_course($id){
+//        $courses = Course::all();
         $course = Course::find($id);
         $modules = Module::all()->where('course_id', $course->id);
         return view('frontend.view_course') ->with([
             'course' => $course,
-            'modules' => $modules
+            'modules' => $modules,
+//            'courses' => $courses
         ]);
     }
 }
