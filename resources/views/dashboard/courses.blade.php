@@ -14,6 +14,13 @@
 
             $('#id').val('');
             $('#course_name').val('');
+            // $('#duration').val('');
+            $('#teacher_name').val('');
+            $('#description').val('');
+            $('#short_description').val('');
+            $('#price').val('');
+            $('#start_date').val('');
+            $('#duration').val('');
 
             // set the add url
             var action = 'course/create';
@@ -44,6 +51,7 @@
                         $('#short_description').val(data['short_description']);
                         $('#price').val(data['price']);
                         $('#start_date').val(data['start_date']);
+                        $('#duration').val(data['duration']);
 
                         if (data['is_active'] === 1){
                             $('#is_active').prop('checked', true);
@@ -191,13 +199,17 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <label for="price" class="bmd-label-floating">Price</label>
                                 <input type="number" id="price" name="price" class="form-control">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <label for="start_date" class="bmd-label-floating">Start date</label>
                                 <input type="date" id="start_date" name="start_date" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="duration" class="bmd-label-floating">Duration</label>
+                                <input type="number" id="duration" name="duration" class="form-control">
                             </div>
                         </div>
 

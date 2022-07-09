@@ -44,3 +44,5 @@ Route::post('module/update', [CoursesController::class, 'module_update']);
 Route::post('module/delete', [CoursesController::class, 'module_delete']);
 Route::get('lessons', [LessonsController::class, 'lessons_index']);
 
+//Route::view('index', 'frontend.index');
+

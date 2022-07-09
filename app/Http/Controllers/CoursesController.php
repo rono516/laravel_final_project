@@ -32,6 +32,7 @@ class CoursesController extends Controller
         $course->short_description = $request->short_description;
         $course->description = $request->description;
         $course->price = $request->price;
+        $course->duration = $request->duration;
 //        $course->image_url = $request->image_url;
         $course->start_date = $request->start_date;
         $course->is_active = $request->is_active == "on";
@@ -81,7 +82,9 @@ class CoursesController extends Controller
         $course->teacher = $request->teacher_name;
         $course->short_description = $request->short_description;
         $course->description = $request->description;
+        $course->duration = $request->duration;
         $course->price = $request->price;
+
         $course->start_date = $request->start_date;
         if ($request->hasFile('image')){
             $course->image_url = $request->file('image')->store('images', 'public');
