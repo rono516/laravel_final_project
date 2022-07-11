@@ -95,158 +95,24 @@
                     </a>
 
                 </li>
-
                 <li class="nav-item {{\Request::is('/lessons')? 'active': ''}}">
                     <a class="nav-link" href="{{url('lessons')}}">
                         <p>Lessons</p>
                     </a>
 
                 </li>
-
-
                 <li class="nav-item {{\Request::is('/dashboard') ?  active : ''}} ">
-                    <a class="nav-link" href="../examples/dashboard.html">
+                    <a class="nav-link" href="{{url('questions')}}">
                         <!-- <i class="material-icons">dashboard</i> -->
                         <p> Questions </p>
                     </a>
                 </li>
                 <li class="nav-item {{\Request::is('/dashboard') ?  active : ''}} ">
-                    <a class="nav-link" href="../examples/dashboard.html">
+                    <a class="nav-link" href="{{url('tests')}}">
                         <!-- <i class="material-icons">dashboard</i> -->
                         <p> Tests </p>
                     </a>
                 </li>
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#pagesExamples">--}}
-{{--                        <!-- <i class="material-icons">image</i> -->--}}
-{{--                        <p> Pages--}}
-{{--                            <b class="caret"></b>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse" id="pagesExamples">--}}
-{{--                        <ul class="nav">--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/pages/pricing.html">--}}
-{{--                                    <span class="sidebar-mini"> P </span>--}}
-{{--                                    <span class="sidebar-normal"> Pricing </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/pages/timeline.html">--}}
-{{--                                    <span class="sidebar-mini"> T </span>--}}
-{{--                                    <span class="sidebar-normal"> Timeline </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/pages/register.html">--}}
-{{--                                    <span class="sidebar-mini"> RP </span>--}}
-{{--                                    <span class="sidebar-normal"> Register Page </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-
-
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#formsExamples">--}}
-{{--                        <!-- <i class="material-icons">content_paste</i> -->--}}
-{{--                        <p> Forms--}}
-{{--                            <b class="caret"></b>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse" id="formsExamples">--}}
-{{--                        <ul class="nav">--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/forms/regular.html">--}}
-{{--                                    <span class="sidebar-mini"> RF </span>--}}
-{{--                                    <span class="sidebar-normal"> Regular Forms </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/forms/extended.html">--}}
-{{--                                    <span class="sidebar-mini"> EF </span>--}}
-{{--                                    <span class="sidebar-normal"> Extended Forms </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/forms/validation.html">--}}
-{{--                                    <span class="sidebar-mini"> VF </span>--}}
-{{--                                    <span class="sidebar-normal"> Validation Forms </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/forms/wizard.html">--}}
-{{--                                    <span class="sidebar-mini"> W </span>--}}
-{{--                                    <span class="sidebar-normal"> Wizard </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#tablesExamples">--}}
-{{--                        <!-- <i class="material-icons">grid_on</i> -->--}}
-{{--                        <p> Tables--}}
-{{--                            <b class="caret"></b>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse" id="tablesExamples">--}}
-{{--                        <ul class="nav">--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/tables/regular.html">--}}
-{{--                                    <span class="sidebar-mini"> RT </span>--}}
-{{--                                    <span class="sidebar-normal"> Regular Tables </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/tables/extended.html">--}}
-{{--                                    <span class="sidebar-mini"> ET </span>--}}
-{{--                                    <span class="sidebar-normal"> Extended Tables </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/tables/datatables.net.html">--}}
-{{--                                    <span class="sidebar-mini"> DT </span>--}}
-{{--                                    <span class="sidebar-normal"> DataTables.net </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#mapsExamples">--}}
-{{--                        <!-- <i class="material-icons">place</i> -->--}}
-{{--                        <p> Maps--}}
-{{--                            <b class="caret"></b>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse" id="mapsExamples">--}}
-{{--                        <ul class="nav">--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/maps/google.html">--}}
-{{--                                    <span class="sidebar-mini"> GM </span>--}}
-{{--                                    <span class="sidebar-normal"> Google Maps </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/maps/fullscreen.html">--}}
-{{--                                    <span class="sidebar-mini"> FSM </span>--}}
-{{--                                    <span class="sidebar-normal"> Full Screen Map </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item ">--}}
-{{--                                <a class="nav-link" href="../examples/maps/vector.html">--}}
-{{--                                    <span class="sidebar-mini"> VM </span>--}}
-{{--                                    <span class="sidebar-normal"> Vector Map </span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-
             </ul>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Lesson;
 use App\Models\Module;
 use Illuminate\Http\Request;
 
@@ -78,6 +79,10 @@ class CoursesController extends Controller
 
         $course = Course::find($request->id);
 
+        if (!course){
+            abort('404');
+        }
+
         $course->title = $request->course_name;
         $course->teacher = $request->teacher_name;
         $course->short_description = $request->short_description;
@@ -138,6 +143,10 @@ class CoursesController extends Controller
         ]);
 
         $module = Module::find($request->id);
+
+        if (!module){
+            abort('404');
+        }
         $module->course_id = $request->course_id;
         $module->title =$request->title;
         $module->position = $request->position;
@@ -156,7 +165,7 @@ class CoursesController extends Controller
 
         try {
             $module = Module::find($request->module_id);
-            dd($module);
+//            dd($module);
             $module->delete();
             $request->session()->flash('success', 'module deleted successfully');
             return redirect()->back();
@@ -168,5 +177,37 @@ class CoursesController extends Controller
 
     }
 
+
+//    lessons
+    public function lessons_index(){
+        $lessons = Lesson::all();
+//        $courseModules = Module::all()->where('id', '=', '');
+        return view('dashboard.lessons')->with([
+            'lessons' => $lessons
+        ]);
+    }
+
+    public function lesson_store(Request $request){
+        $this->validate($request, [
+//            'module_id' => 'required',
+//            'title' => 'required'
+        ]);
+
+        $lesson = new Lesson();
+        $lesson->module_id = $request->module_id;
+        $lesson->title = $request->title;
+        $lesson->video_link = $request->video_url;
+        $lesson->lesson_text = $request->description;
+        $lesson->is_active = $request->is_active == "on";
+
+        if ($request->hasFile('image')){
+            $lesson->lesson_image = $request->file('image')->store('images', 'public');
+        }
+
+        $lesson->save();
+        request()->session()->flash('success', 'Lesson added successfully');
+        return redirect()->back();
+
+    }
 
 }

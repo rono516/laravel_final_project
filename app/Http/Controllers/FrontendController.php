@@ -20,11 +20,23 @@ class FrontendController extends Controller
     public function view_course($id){
 //        $courses = Course::all();
         $course = Course::find($id);
+        if (!$course){
+            abort('404');
+        }
         $modules = Module::all()->where('course_id', $course->id);
-        return view('frontend.view_course') ->with([
+//        dd($course->modules->lessons->count());
+        return view('viewcourse') ->with([
             'course' => $course,
             'modules' => $modules,
 //            'courses' => $courses
+        ]);
+    }
+
+    public function all_courses(){
+        $courses = Course::all();
+//        $courses = Course::all()->get()->paginate();
+        return view('frontend.all_courses')->with([
+            'courses' => $courses
         ]);
     }
 }

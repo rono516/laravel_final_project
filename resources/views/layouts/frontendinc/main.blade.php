@@ -15,11 +15,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Site Icons -->
     <link rel="shortcut icon" href="frontendassets/images/favicon.ico" type="image/x-icon" />
-{{--    <link rel="apple-touch-icon" href="frontendassets/images/apple-touch-icon.png">--}}
-
+    <link rel="apple-touch-icon" href="frontendassets/images/apple-touch-icon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet">
@@ -46,25 +44,6 @@
 <!-- END LOADER -->
 
 <div id="wrapper">
-    <!-- BEGIN # MODAL LOGIN -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                    <form id="login-form">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="flaticon-add" aria-hidden="true"></span>
-                        </button>
-                        <div class="modal-body">
-                            <input class="form-control" type="text" placeholder="What you are looking for?" required>
-                        </div>
-                    </form><!-- End # Login Form -->
-                </div><!-- End # DIV Form -->
-            </div>
-        </div>
-    </div>
-    <!-- END # MODAL LOGIN -->
 
     @include('layouts.frontendinc.topnavbar')
 
@@ -72,28 +51,10 @@
 
     @yield('content')
 
-{{--    footer--}}
+    {{--    footer--}}
     @include('layouts.frontendinc.footer')
 
-{{--    <div class="copyrights">--}}
-{{--        <div class="container">--}}
-{{--            <div class="clearfix">--}}
-{{--                <div class="pull-left">--}}
-{{--                    <div class="cop-logo">--}}
-{{--                        <a href="#"><img width="70" height="60" src="frontendassets/images/tuklogo.png" alt="Logo here"></a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 
-{{--                <div class="pull-right">--}}
-{{--                    <div class="footer-links">--}}
-{{--                        <ul class="list-inline">--}}
-{{--                            <li>Design : <a href="https://html.design">HTML.Design</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div><!-- end container -->--}}
-{{--    </div><!-- end copy -->--}}
 </div><!-- end wrapper -->
 
 <!-- jQuery Files -->

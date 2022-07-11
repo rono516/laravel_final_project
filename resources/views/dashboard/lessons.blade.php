@@ -9,23 +9,27 @@
             return false;
         });
 
-        $(document).on('click', '.add-course-btn', function() {
-            var _Form = $('#course-form');
+        $(document).on('click', '.add-lesson-btn', function() {
+            var _Form = $('#lesson-form');
 
             $('#id').val('');
-            $('#course_name').val('');
+            $('#title').val('');
+            $('#video_url').val('');
+            $('#description').val('');
+            $('#image').val('');
+            $('#is_active').val('');
 
             // set the add url
-            var action = 'course/create';
+            var action = 'lesson/create';
             //console.log(action);
             _Form .attr('action', action);
-            $('#course-modal').modal('show');
+            $('#lesson-modal').modal('show');
         });
 
         $(document).on('click', '.edit-course-btn', function() {
             var _Btn = $(this);
             var _id = _Btn.attr('item-id'),
-                _Form = $('#course-form');
+                _Form = $('#lesson-form');
 
             if (_id !== '') {
                 $.ajax({
@@ -58,7 +62,7 @@
                         _Form .attr('action', action);
 
                         // open the modal
-                        $('#course-modal').modal('show');
+                        $('#lesson-modal').modal('show');
                     }
                 });
             }
@@ -80,7 +84,7 @@
                                     <i class="material-icons">assignment</i>
                                 </div>
                                 <h4 class="card-title ">Lessons</h4>
-                                <button class="btn btn-success btn-sm add-course-btn">
+                                <button class="btn btn-success btn-sm add-lesson-btn">
                                     Add Lesson
                                 </button>
                             </div>
@@ -103,6 +107,9 @@
                                             Module
                                         </th>
                                         <th>
+                                            Lesson
+                                        </th>
+                                        <th>
                                             Active
                                         </th>
                                         <th>
@@ -114,12 +121,15 @@
                                         @foreach($lessons as $lesson)
                                             <tr>
                                                 <td>
-                                                    {{$lesson->course->module->title}}
+                                                    {{$lesson->module->course->title}}
 
                                                 </td>
                                                 <td>
                                                     {{$lesson->module->title}}
 
+                                                </td>
+                                                <td>
+                                                    {{$lesson->title}}
                                                 </td>
                                                 <td>
                                                     {{$lesson->is_active == true ? 'No' : 'Yes'}}
@@ -151,56 +161,71 @@
 
 
 
-    <div class="modal fade" id="course-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Course Details</h4>
+                    <h4 class="modal-title" id="myModalLabel">Lesson Details</h4>
                 </div>
                 <div class="modal-body" >
-                    <form action="{{ url('courses') }}" method="POST" id="course-form" enctype="multipart/form-data">
+                    <form action="{{ url('courses') }}" method="POST" id="lesson-form" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row">
+
+{{--                            module-id--}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="lesson_name" class="bmd-label-floating">Lesson Name</label>
-                                    <input type="text" class="form-control" id="lesson_name" name="lesson_name">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Select Module"
+                                            name="module_id" id="module_id" >
+                                        <option disabled> Select Module</option>
+                                        @foreach(\App\Models\Module::all() as $module)
+                                            <option value="{{$module->id}}">{{$module->title}} </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="teacher_name" class="bmd-label-floating">Teacher Name</label>
-                                    <input type="text" class="form-control" id="teacher_name" name="teacher_name">
+                                    <label for="title" class="bmd-label-floating">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title">
                                 </div>
+                            </div>
+{{--                            <div class="col-md-6">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="teacher_name" class="bmd-label-floating">Teacher Name</label>--}}
+{{--                                    <input type="text" class="form-control" id="teacher_name" name="teacher_name">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="video_url" class="bmd-label-floating">Video Url</label>
+{{--                                <textarea id="short_description"  class="form-control" name="short_description"></textarea>--}}
+                                 <input type="text" id="video_url" class="form-control" name="video_url">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="short_description" class="bmd-label-floating">Short description</label>
-                                <textarea id="short_description"  class="form-control" name="short_description"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label for="description" class="bmd-label-floating">More Description</label>
+                                <label for="description" class="bmd-label-floating">Lesson text</label>
                                 <textarea id="description"  class="form-control" name="description"></textarea>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="price" class="bmd-label-floating">Price</label>
-                                <input type="number" id="price" name="price" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="start_date" class="bmd-label-floating">Start date</label>
-                                <input type="date" id="start_date" name="start_date" class="form-control">
-                            </div>
-                        </div>
+{{--                        <div class="row">--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <label for="price" class="bmd-label-floating">Price</label>--}}
+{{--                                <input type="number" id="price" name="price" class="form-control">--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <label for="start_date" class="bmd-label-floating">Start date</label>--}}
+{{--                                <input type="date" id="start_date" name="start_date" class="form-control">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <div class="row">
                             <div class="col-md-6">

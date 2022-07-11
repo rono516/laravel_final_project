@@ -1,14 +1,10 @@
-<html>
-<head>
-    <title>Course View</title>
-</head>
+@extends('layouts.frontendinc.main')
 
-<body>
+@section('content')
 <h1>
     {{$course->title}}
 </h1>
   @foreach($modules as $module)
       <p>{{$module->title}}</p>
   @endforeach
-</body>
-</html>
+@endsection

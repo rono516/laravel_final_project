@@ -7,10 +7,10 @@
         <div class="home-text-wrapper relative container">
             <div class="home-message">
                 <p>TUK Learning Management System</p>
-                <small>TukLearn is the ideal choice for your organization, your business and your online education system. Create your online course now with unlimited page templates, color options, and menu features.</small>
+                <small>TukLMS aims to provide an improved interactive approach to the online learning around TUK</small>
                 <div class="btn-wrapper">
                     <div class="text-center">
-                        <a href="#" class="btn btn-primary wow slideInLeft">Read More</a> &nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-default wow slideInRight">Buy Now</a>
+                        <a href="#newsandblogs" class="btn btn-primary wow slideInLeft">News And Blogs</a> &nbsp;&nbsp;&nbsp;<a href="#courses" class="btn btn-default wow slideInRight">Start Learning</a>
                     </div>
                 </div><!-- end row -->
             </div>
@@ -22,7 +22,7 @@
 
 
 
-    <section class="section gb">
+    <section id="courses" class="section gb">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Recent Courses</h3>
@@ -37,7 +37,7 @@
 {{--                            <img src="frontendassets/upload/course_01.jpg" alt="" class="img-responsive">--}}
                             <img  src="{{\Illuminate\Support\Facades\Storage::url($course->image_url)}}" alt="" >
                             <div class="magnifier">
-                                <a href="{{url('view',$course->id)}}" title=""><i class="flaticon-online-course"></i></a>
+                                <a href="{{$course->id}}" title=""><i class="flaticon-online-course"></i></a>
                             </div>
                         </div><!-- end image-wrap -->
                         <div class="course-details">
@@ -70,133 +70,6 @@
                 </div><!-- end col -->
                 @endforeach
 
-{{--                <div class="caro-item">--}}
-{{--                    <div class="course-box">--}}
-{{--                        <div class="image-wrap entry">--}}
-{{--                            <img src="frontendassets/upload/course_02.jpg" alt="" class="img-responsive">--}}
-{{--                            <div class="magnifier">--}}
-{{--                                <a href="#" title=""><i class="flaticon-add"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div><!-- end image-wrap -->--}}
-{{--                        <div class="course-details">--}}
-{{--                            <h4>--}}
-{{--                                <small>Design</small>--}}
-{{--                                <a href="#" title="">Designing Game UI Assets in Adobe Illustrator</a>--}}
-{{--                            </h4>--}}
-{{--                            <p>Curabitur condimentum velit non odio mattis tristique. Nam vitae orci aliquam. </p>--}}
-{{--                        </div><!-- end details -->--}}
-{{--                        <div class="course-footer clearfix">--}}
-{{--                            <div class="pull-left">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#"><i class="fa fa-user"></i> 41</a></li>--}}
-{{--                                    <li><a href="#"><i class="fa fa-clock-o"></i> 33 Min.</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-
-{{--                            <div class="pull-right">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#">$55.00</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-{{--                        </div><!-- end footer -->--}}
-{{--                    </div><!-- end box -->--}}
-{{--                </div><!-- end col -->--}}
-
-{{--                <div class="caro-item">--}}
-{{--                    <div class="course-box">--}}
-{{--                        <div class="image-wrap entry">--}}
-{{--                            <img src="frontendassets/upload/course_03.jpg" alt="" class="img-responsive">--}}
-{{--                            <div class="magnifier">--}}
-{{--                                <a href="#" title=""><i class="flaticon-add"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div><!-- end image-wrap -->--}}
-{{--                        <div class="course-details">--}}
-{{--                            <h4>--}}
-{{--                                <small>PHP Coding</small>--}}
-{{--                                <a href="#" title="">How to Become a Web Developer: Learn PHP</a>--}}
-{{--                            </h4>--}}
-{{--                            <p>Donec auctor nec nibh sit amet pulvinar. Mauris nulla elit, lacinia ac facilisis mattis.</p>--}}
-{{--                        </div><!-- end details -->--}}
-{{--                        <div class="course-footer clearfix">--}}
-{{--                            <div class="pull-left">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#"><i class="fa fa-user"></i> 35</a></li>--}}
-{{--                                    <li><a href="#"><i class="fa fa-clock-o"></i> 1 Hrs.</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-
-{{--                            <div class="pull-right">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#">$51.00</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-{{--                        </div><!-- end footer -->--}}
-{{--                    </div><!-- end box -->--}}
-{{--                </div><!-- end col -->--}}
-
-{{--                <div class="caro-item">--}}
-{{--                    <div class="course-box">--}}
-{{--                        <div class="image-wrap entry">--}}
-{{--                            <img src="frontendassets/upload/course_04.jpg" alt="" class="img-responsive">--}}
-{{--                            <div class="magnifier">--}}
-{{--                                <a href="#" title=""><i class="flaticon-add"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div><!-- end image-wrap -->--}}
-{{--                        <div class="course-details">--}}
-{{--                            <h4>--}}
-{{--                                <small>PHP Coding</small>--}}
-{{--                                <a href="#" title="">How to Build a Custom Theme for Drupal 8</a>--}}
-{{--                            </h4>--}}
-{{--                            <p>Pellentesque ut enim dictum, interdum lorem eget, vulputate eros sed felis euismod.</p>--}}
-{{--                        </div><!-- end details -->--}}
-{{--                        <div class="course-footer clearfix">--}}
-{{--                            <div class="pull-left">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#"><i class="fa fa-user"></i> 35</a></li>--}}
-{{--                                    <li><a href="#"><i class="fa fa-clock-o"></i> 45 Min.</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-
-{{--                            <div class="pull-right">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#">$51.00</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-{{--                        </div><!-- end footer -->--}}
-{{--                    </div><!-- end box -->--}}
-{{--                </div><!-- end col -->--}}
-
-{{--                <div class="caro-item">--}}
-{{--                    <div class="course-box">--}}
-{{--                        <div class="image-wrap entry">--}}
-{{--                            <img src="frontendassets/upload/course_01.jpg" alt="" class="img-responsive">--}}
-{{--                            <div class="magnifier">--}}
-{{--                                <a href="#" title=""><i class="flaticon-add"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div><!-- end image-wrap -->--}}
-{{--                        <div class="course-details">--}}
-{{--                            <h4>--}}
-{{--                                <small>Javascript</small>--}}
-{{--                                <a href="#" title="">Modern JavaScript Linting With ESLint</a>--}}
-{{--                            </h4>--}}
-{{--                            <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>--}}
-{{--                        </div><!-- end details -->--}}
-{{--                        <div class="course-footer clearfix">--}}
-{{--                            <div class="pull-left">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#"><i class="fa fa-user"></i> 21</a></li>--}}
-{{--                                    <li><a href="#"><i class="fa fa-clock-o"></i> 15 Min.</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-
-{{--                            <div class="pull-right">--}}
-{{--                                <ul class="list-inline">--}}
-{{--                                    <li><a href="#">$22.00</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </div><!-- end left -->--}}
-{{--                        </div><!-- end footer -->--}}
-{{--                    </div><!-- end box -->--}}
-{{--                </div><!-- end col -->--}}
             </div><!-- end row -->
 
             <hr class="invis">
@@ -240,7 +113,7 @@
     </section>
 
 
-    <section class="section gb">
+    <section id="newsandblogs" class="section gb">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Recent News & Blogs</h3>
