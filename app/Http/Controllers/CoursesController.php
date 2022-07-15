@@ -79,9 +79,9 @@ class CoursesController extends Controller
 
         $course = Course::find($request->id);
 
-        if (!course){
-            abort('404');
-        }
+//        if (!course){
+//            abort('404');
+//        }
 
         $course->title = $request->course_name;
         $course->teacher = $request->teacher_name;
@@ -120,6 +120,7 @@ class CoursesController extends Controller
         $module = new Module();
         $module->course_id = $request->course_id;
         $module->title = $request->title;
+        $module->description = $request->description;
         $module->position = $request->position;
 
         $module->active = $request->active == "on";
@@ -149,6 +150,7 @@ class CoursesController extends Controller
         }
         $module->course_id = $request->course_id;
         $module->title =$request->title;
+        $module->description = $request->description;
         $module->position = $request->position;
         $module->active = $request->active == "on";
         $module->update();

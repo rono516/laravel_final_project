@@ -15,7 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('user_group')->default(3);
             $table->foreign('user_group')->references('id')->on('user_groups');
             $table->string('name');

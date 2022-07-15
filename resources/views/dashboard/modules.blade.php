@@ -15,6 +15,7 @@
             $('#id').val('');
             $('#title').val('');
             $('#position').val('');
+            $('#description').val('');
 
             // set the add url
             var action = 'module/create';
@@ -42,6 +43,7 @@
                         $('#id').val(data['id']);
                         $('#title').val(data['title']);
                         $('#position').val(data['position']);
+                        $('#description').val(data['']);
                         // $('#short_description').val(data['short_description']);
                         // $('#price').val(data['price']);
                         // $('#start_date').val(data['start_date']);
@@ -191,6 +193,14 @@
 {{--                                    <input type="text" class="form-control" id="teacher_name" name="teacher_name">--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="description" class="bmd-label-floating">Description</label>
+                                <textarea id="description" name="description" class="description"></textarea>
+
+                             </div>
                         </div>
 
                         <div class="row">

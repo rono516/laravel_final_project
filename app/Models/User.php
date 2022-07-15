@@ -43,7 +43,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role() {
+    public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(UserGroup::class,'user_group');
+    }
+
+//    public function courses(){
+//        return $this->belongsToMany(Course::class);
+//    }
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'course_students');
     }
 }

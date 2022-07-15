@@ -85,7 +85,12 @@
 
                             @foreach($modules as $module)
 
-                                <a href="{{url('/')}}">{{$module->title}}</a> <br> <hr>
+                                <a href="#">{{$module->title}}</a>
+
+                                <a href="{{$module->lessons}}"></a>
+
+{{--                                <br> --}}
+                                <hr>
 
 
 
@@ -116,7 +121,12 @@
 
 
                             <div class="shop-meta">
-                                <a href="#" class="btn btn-primary">Start Course</a>
+                                <form action="{{url('start_course')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="course_id" value="{{$course->id}}">
+                                    <button class="btn btn-primary btn-sm">Start Course</button>
+                                </form>
+{{--                                <a href="{{url('start_course')}}" class="btn btn-primary">Start Course</a>--}}
 
                             </div><!-- end shop meta -->
                         </div><!-- end desc -->

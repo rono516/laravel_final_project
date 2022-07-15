@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo-normal">
-                    <a class="navbar-brand" href="index.html"><img width="70" height="60" src="frontendassets/images/tuklogo.png" alt=""></a>
+                    <a class="navbar-brand" href="{{url('/')}}"><img width="70" height="60" src="frontendassets/images/tuklogo.png" alt=""></a>
                 </div>
             </div>
 
@@ -19,18 +19,34 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{url('/')}}">Home</a></li>
 
-                    @auth()
-                        <li><a href="{{url('/logout')}}">Logout</a></li>
-                    @endauth
+
 
                     @guest()
+
                         <li><a href="{{url('/login')}}">Login</a></li>
-                        <li><a href="{{url('/register')}}">Sign Up</a></li>
+{{--                        <li><a href="{{url('/register')}}">Sign Up</a></li>--}}
                     @endguest
+
+
 
                     <li><a href="{{url('all')}}">All Courses</a></li>
 
                     <li><a href="{{url('/')}}">Contact</a></li>
+
+                    @auth()
+                        <li><a>{{auth()->user()->email}}</a></li>
+                        <li><a href="{{url('/logout')}}">Logout</a></li>
+{{--                    @endauth--}}
+
+{{--                    @auth()--}}
+
+                            @if(auth()->user()->role->has_perm([1, 2, 3]))
+                                      <li><a href="{{url('/dashboard')}}">Dashboard</a></li>
+                            @endif
+                    @endauth
+
+{{--                    @endif--}}
+{{--                    @if(auth()->user()->role->has_perm([]))--}}
 {{--                    <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>--}}
 {{--                    <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li>--}}
                 </ul>

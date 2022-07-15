@@ -43,7 +43,7 @@
                         <div class="course-details">
                             <h4>
 {{--                                <small>Javascript</small>--}}
-                                <a href="{{url('view',$course->id)}}" title="">{{$course->title}}</a>
+                                <a href="{{$course->id}}" title="">{{$course->title}}</a>
                             </h4>
                             <p>{{$course->short_description}}</p>
 {{--                            <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>--}}
@@ -75,7 +75,7 @@
             <hr class="invis">
 
             <div class="section-button text-center">
-                <a href="#" class="btn btn-primary">View All Courses</a>
+                <a href="{{url('/all')}}" class="btn btn-primary">View All Courses</a>
             </div>
         </div><!-- end container -->
     </section>
@@ -126,12 +126,12 @@
                         <div class="image-wrap entry">
                             <img src="frontendassets/upload/blog_01.jpeg" alt="" class="img-responsive">
                             <div class="magnifier">
-                                <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                                <a href="{{url('/')}}" title=""><i class="flaticon-add"></i></a>
                             </div>
                         </div><!-- end image-wrap -->
 
                         <div class="blog-desc">
-                            <h4><a href="blog-single.html">How to learn perfect code with Javascript</a></h4>
+                            <h4><a href="{{url('/')}}">How to learn perfect code with Javascript</a></h4>
                             <p>Praesent at suscipit ligula. Suspendisse pre neque, quis suscipit enim. sed maximus, mia auctor.</p>
                         </div><!-- end blog-desc -->
 
@@ -150,12 +150,12 @@
                         <div class="image-wrap entry">
                             <img src="frontendassets/upload/blog_02.jpeg" alt="" class="img-responsive">
                             <div class="magnifier">
-                                <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                                <a href="{{url('/')}}" title=""><i class="flaticon-add"></i></a>
                             </div>
                         </div><!-- end image-wrap -->
 
                         <div class="blog-desc">
-                            <h4><a href="blog-single.html">The most suitable web design & development tutorials</a></h4>
+                            <h4><a href="{{url('/')}}">The most suitable web design & development tutorials</a></h4>
                             <p>Sed suscipit neque in erat posuere tristique aliquam porta vestibulum. Cras placerat tincidunt. </p>
                         </div><!-- end blog-desc -->
 
@@ -174,12 +174,12 @@
                         <div class="image-wrap entry">
                             <img src="frontendassets/upload/blog_03.jpeg" alt="" class="img-responsive">
                             <div class="magnifier">
-                                <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                                <a href="{{url('/')}}" title=""><i class="flaticon-add"></i></a>
                             </div>
                         </div><!-- end image-wrap -->
 
                         <div class="blog-desc">
-                            <h4><a href="blog-single.html">Design for all mobile devices! This is name "responsive"</a></h4>
+                            <h4><a href="{{url('/')}}">Design for all mobile devices! This is name "responsive"</a></h4>
                             <p>Suspendisse scelerisque ex ac mattis molestie vel enim ut massa placerat faucibus sed ut dui vivamus. </p>
                         </div><!-- end blog-desc -->
 
