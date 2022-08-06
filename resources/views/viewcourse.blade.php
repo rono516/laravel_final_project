@@ -29,7 +29,7 @@
                                 <div class="image-wrap entry">
                                     <img src="{{\Illuminate\Support\Facades\Storage::url($course->image_url)}}" alt="" class="img-responsive">
                                     <div class="magnifier">
-                                        <a rel="prettyPhoto[inline]" href="frontendassets/upload/single_shop_01.jpg" title=""><i class="flaticon-add"></i></a>
+                                        <a rel="prettyPhoto[inline]" href="#" title=""><i class="flaticon-add"></i></a>
                                     </div>
                                 </div><!-- end image-wrap -->
                             </div>
@@ -85,9 +85,9 @@
 
                             @foreach($modules as $module)
 
-                                <a href="#">{{$module->title}}</a>
+                                <a href="{{url($module->title)}}">{{$module->title}}</a>
 
-                                <a href="{{$module->lessons}}"></a>
+{{--                                <a href="{{$module->lessons->title}}"></a>--}}
 
 {{--                                <br> --}}
                                 <hr>

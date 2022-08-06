@@ -31,23 +31,8 @@ Route::get('modules', [CoursesController::class, 'modules_index']);
 Route::get('courses', [CoursesController::class, 'course_index']);
 Route::get('lessons', [CoursesController::class, 'lessons_index']);
 Route::post('lesson/create', [CoursesController::class, 'lesson_store']);
-
-Auth::routes();
-Route::middleware(['auth'])->group(function(){
-    Route::post('start_course/{id}', [FrontendController::class, 'start_course']);
-    Route::get('my_courses',[FrontendController::class, 'my_courses']);
-});
-
 Route::get('all', [FrontendController::class, 'all_courses']);
 Route::get('{id}', [FrontendController::class, 'view_course']);
-
-
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Route::view('/redirect', 'redirect')->middleware('perm:1');
-
 Route::post('course/create', [CoursesController::class, 'course_store']);
 Route::post('course/delete',[CoursesController::class, 'course_delete']);
 Route::get('course/edit/{id}',[CoursesController::class, 'course_edit'])->name('edit-course');
@@ -57,6 +42,25 @@ Route::post('module/create', [CoursesController::class, 'modules_create']);
 Route::get('module/edit/{id}',[CoursesController::class, 'modules_edit'])->name('edit-module');
 Route::post('module/update', [CoursesController::class, 'module_update']);
 Route::post('module/delete', [CoursesController::class, 'module_delete']);
+
+Auth::routes();
+Route::middleware(['auth'])->group(function(){
+    Route::get('view/{title}', [FrontendController::class, 'view_module']);
+    Route::post('start_course/{id}', [FrontendController::class, 'start_course']);
+    Route::get('my_courses',[FrontendController::class, 'my_courses']);
+
+});
+
+
+
+
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::view('/redirect', 'redirect')->middleware('perm:1');
+
+
 
 
 

@@ -58,23 +58,19 @@
                                 <div class="course-footer clearfix">
                                     <div class="pull-left">
                                         <ul class="list-inline">
-                                            <li><a href="#"><i class="flaticon-online-course"></i> Start Course</a></li>
+                                            <li><p> <i class="flaticon-computer-tool-for-education"></i> Progress: </p></li>
+{{--                                            <i class="flaticon-online-course"></i>--}}
                                         </ul>
                                     </div><!-- end left -->
 
-                                    {{--                                <div class="pull-center">--}}
-                                    {{--                                    <ul class="list-inline">--}}
-                                    {{--                                        <li>{{$course->duration}} Min.</li>--}}
-                                    {{--                                    </ul>--}}
-                                    {{--                                </div>--}}
-
                                     <div class="pull-right">
                                         <ul class="list-inline">
-                                            @if($course->price == 0)
-                                                <li><a href="#">Free Course</a></li>
-                                            @else
-                                                <li><a href="#">Ksh.{{number_format($course->price)}}</a></li>
-                                            @endif
+                                            <li><p> X of {{$course->modules->count()}} modules</p></li>
+{{--                                            @if($course->price == 0)--}}
+{{--                                                <li><a href="#">Free Course</a></li>--}}
+{{--                                            @else--}}
+{{--                                                <li><a href="#">Ksh.{{number_format($course->price)}}</a></li>--}}
+{{--                                            @endif--}}
                                         </ul>
                                     </div><!-- end left -->
                                 </div><!-- end footer -->
@@ -87,19 +83,6 @@
 
                     <hr class="invis">
 
-                    {{--                <div class="row text-center">--}}
-                    {{--                    <div class="col-md-12">--}}
-                    {{--                        <ul class="pagination">--}}
-                    {{--                            <li>{{$pages->links()}}</li>--}}
-                    {{--                            <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>--}}
-                    {{--                            <li class="active"><a href="javascript:void(0)">1</a></li>--}}
-                    {{--                            <li><a href="javascript:void(0)">2</a></li>--}}
-                    {{--                            <li><a href="javascript:void(0)">3</a></li>--}}
-                    {{--                            <li><a href="javascript:void(0)">...</a></li>--}}
-                    {{--                            <li><a href="javascript:void(0)">&raquo;</a></li>--}}
-                    {{--                        </ul>--}}
-                    {{--                    </div><!-- end col -->--}}
-                    {{--                </div><!-- end row -->--}}
                 </div>
             </div><!-- end container -->
     </section>

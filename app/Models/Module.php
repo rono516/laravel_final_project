@@ -24,4 +24,8 @@ class Module extends Model
     public function lessons(){
         return $this->hasMany(Lesson::class);
     }
+
+    public function students(){
+        return $this->belongsToMany(User::class, 'progress_student');
+    }
 }

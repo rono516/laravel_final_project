@@ -54,20 +54,25 @@ class FrontendController extends Controller
 
     public function my_courses(){
         $coursesStudent = CourseStudent::orderBy('id', 'DESC')->where('user_id', Auth::id())->first();
-//        $courses = Course::where();
-//        foreach ($coursesStudent as $course){
-//            dd();
-//        }
-
-//        foreach ($coursesStudent as $studentCourse){
-//            $courses = Course::all()->where('id', '=', $studentCourse->course_id)    ;
-//        }
-//        dd($coursesStudent->count());
         $courses = Course::all()->where('id', '=', $coursesStudent->course_id);
+
+//        dd($courses->count());
 
         return view('frontend.mycourses')->with([
             'coursesStudent' => $coursesStudent,
             'courses' =>$courses
+        ]);
+    }
+
+
+    public function view_module($title){
+        $module = Module::find($title);
+
+        if (Auth::check()) {
+            $module->students()->attach(Auth::id());
+        }
+        return view('frontend.lessons')->with([
+            'module' => $module
         ]);
     }
 }

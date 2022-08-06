@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Course::class, 'course_students');
     }
+
+    public function modules(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Module::class);
+    }
 }
